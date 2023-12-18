@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      text-align: center;
+      align-content: center;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      align-content: center;
+    }
+
+    th {
+      text-align: center;
+      background-color: blueviolet;
+      color: white;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .addbtn {
+      color: green;
+    }
+
+    .updatebtn {
+      color: blue;
+    }
+
+    .deletebtn {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Students Information</h2>
+
+  <table style="width:50%" class="center">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <% for(let i of studentData) {%>
+    <tr>
+      <td><%= i.id %></td>
+      <td><%= i.name %></td>
+      <td><%= i.gender %></td>
+      <td><%= i.age %></td>
+      <td>
+        <button>
+          <a class="updatebtn" href="/editStudent/<%= i.id %>/<%= i.name  %>/<%= i.gender %>/<%= i.age %>" style="text-decoration:none;">Edit </a>
+        </button>
+        <button>
+          <a class="deletebtn" href="/deleteStudent/<%= i.id %>%>" style="text-decoration:none;">Delete </a>
+        </button>
+    </tr>
+    <%    } %>
+  </table>
+  <br>
+  <button>
+    <a class="addbtn" href="/addStudent" style="text-decoration:none;">Add </a>
+  </button>
+
+
+
+</body>
+
+</html>

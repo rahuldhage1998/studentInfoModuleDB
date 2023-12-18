@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    .manadatory {
+      color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h2>Edit Student</h2>
+  <div>
+    <form action="/updateStudent" method="POST" style="border:black; border-width:2px; border-style:solid;padding: 20px;">
+
+      <input type="hidden" id="id" name="id" value="<%=studentData.id%>" required>
+
+      <label for="name">Name:<span class="manadatory">*</span></label>
+      <input type="text" id="name" name="name" value="<%=studentData.name%>" required><br><br>
+
+      <label for="age">Age:<span class="manadatory">*</span></label>&nbsp;&nbsp;
+      <input type="number" id="age" name="age" value="<%=studentData.age%>" required><br><br>
+
+      <label for="gender">Gender: <span class="manadatory">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" id="male" name="gender" value="male" <%if(studentData.gender=='male'){%> <%="checked"%> <%}%>
+
+  <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female"  
+    <%if(studentData.gender=='female'){%> <%="checked"%> <%}%>  
+    <label for="female">female</label>
+
+    
+  <br></br></br>
+  <button>Update</button>
+</form>
+
+</div>
+</body>
+</html>
