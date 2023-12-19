@@ -62,7 +62,7 @@ Update a student record that already exists in JSON file.
 **deletez(id)**
 Delete a student record from JSON file based on the provided ID.
 
-# EJS Files - 
+### EJS Files - 
 
 **1. addStudent** -
 We can add new student data through this page.
